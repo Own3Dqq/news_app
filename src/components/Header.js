@@ -1,20 +1,20 @@
-import { useState } from "react";
-import Logo from "./Logo";
-import Navbar from "./Navbar";
-import Profile from "./Profile";
+import { useState } from 'react'
+import Logo from './Logo'
+import Navbar from './Navbar'
+import Profile from './Profile'
 
 const Header = () => {
-  const [loggin, setLoggin] = useState(false);
+    const [loggin] = useState(false)
 
-  return (
-    <div className="flex flex-col">
-      <div className="flex justify-end">
-        {loggin ? (
-          <Profile />
-        ) : (
-          <div className="flex justify-between gap-3">
-            <button
-              className="
+    return (
+        <div className="flex flex-col">
+            <div className="flex justify-end">
+                {loggin ? (
+                    <Profile />
+                ) : (
+                    <div className="flex justify-between gap-3">
+                        <button
+                            className="
                                 py-2 
                                 px-8 
                                 font-semibold
@@ -22,11 +22,11 @@ const Header = () => {
                                 hover:border-red-500 
                                 transition-all 
                                 duration-300"
-            >
-              Log In
-            </button>
-            <button
-              className="
+                        >
+                            Log In
+                        </button>
+                        <button
+                            className="
                                 bg-red-500 
                                 text-white 
                                 font-semibold 
@@ -41,18 +41,18 @@ const Header = () => {
                                 transition-all
                                 duration-300
                                 "
-            >
-              Sign Up
-            </button>
-          </div>
-        )}
-      </div>
-      <div className="flex justify-between py-4">
-        <Logo />
-        <Navbar />
-      </div>
-    </div>
-  );
-};
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                )}
+            </div>
+            <div className="flex justify-between py-4">
+                <Logo />
+                <Navbar />
+            </div>
+        </div>
+    )
+}
 
-export default Header;
+export default Header
