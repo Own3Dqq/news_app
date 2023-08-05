@@ -2,8 +2,10 @@
 
 # dependencies
 /node_modules
+/news-homepage-main
 /.pnp
 .pnp.js
+.idea
 
 # testing
 /coverage
