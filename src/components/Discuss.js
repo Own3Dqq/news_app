@@ -1,12 +1,6 @@
-import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const GET_POPULAR_DICSUSS = 'https://.../'
 const Discuss = () => {
-    // useEffect(() => {
-    //     fetch(GET_POPULAR_DICSUSS)
-    // }, [])
-
     return (
         <div className="pb-10 border-b-2 border-black/20">
             <h3 className="text-md font-semibold mb-4">#discuss</h3>

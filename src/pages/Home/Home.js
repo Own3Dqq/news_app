@@ -4,10 +4,10 @@ import SelectedTopic from '../../components/SelectedTopic'
 import Discuss from '../../components/Discuss'
 
 /* Image */
-import retro from '../../assets/images/image-retro-pcs.jpg'
-import keyboard from '../../assets/images/image-top-laptops.jpg'
-import growth from '../../assets/images/image-gaming-growth.jpg'
-import imagePost from '../../assets/images/image-web-3-desktop.jpg'
+// import retro from '../../assets/images/image-retro-pcs.jpg'
+// import keyboard from '../../assets/images/image-top-laptops.jpg'
+// import growth from '../../assets/images/image-gaming-growth.jpg'
+// import imagePost from '../../assets/images/image-web-3-desktop.jpg'
 
 // const posts = [
 //     {
@@ -103,29 +103,29 @@ import imagePost from '../../assets/images/image-web-3-desktop.jpg'
 //     // }
 // ]
 
-const cards = [
-    {
-        id: 1,
-        title: 'Reviving Retro PCS',
-        desc: 'What happers when old PCs are given modern upgrades?',
-        img: retro,
-    },
-    {
-        id: 2,
-        title: 'Top 10 Laptops of 2023',
-        desc: 'Our best picks for various needs and budgets.',
-        img: keyboard,
-    },
-    {
-        id: 3,
-        title: 'The Growth of Gaming ',
-        desc: 'How the pandemic has sparked fresh opportunities.',
-        img: growth,
-    },
-]
+// const cards = [
+//     {
+//         id: 1,
+//         title: 'Reviving Retro PCS',
+//         desc: 'What happers when old PCs are given modern upgrades?',
+//         img: retro,
+//     },
+//     {
+//         id: 2,
+//         title: 'Top 10 Laptops of 2023',
+//         desc: 'Our best picks for various needs and budgets.',
+//         img: keyboard,
+//     },
+//     {
+//         id: 3,
+//         title: 'The Growth of Gaming ',
+//         desc: 'How the pandemic has sparked fresh opportunities.',
+//         img: growth,
+//     },
+// ]
 
 const Home = () => {
-    const [error, setError] = useState(null)
+    // const [error, setError] = useState(null)
     const [activeTopic, setActiveTopic] = useState('For you')
 
     return (

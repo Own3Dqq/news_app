@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 
 const ModalContent = ({ onClose, children }) => {
-    const handleCloseWindow = () => {}
-
     useEffect(() => {}, [])
 
     return (
