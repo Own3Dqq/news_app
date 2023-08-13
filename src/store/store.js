@@ -1,9 +1,8 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
-const useStore = create((set) => ({
-  /* Var */
-  bears: 0,
-  /* Reducer */
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
-}));
+export const useStore = create((set) => ({
+    /* Var */
+    topics: ['For you', 'Relevant', 'Latest', 'Top'],
+    activeTopic: 'For you',
+    updateActiveTopic: (topic) => set(() => ({ activeTopic: topic })),
+}))

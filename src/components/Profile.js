@@ -1,10 +1,5 @@
 const Profile = ({ data }) => {
-  return (
-    <div className="flex">
-      <div className="">favorit posts</div>
-      <div>profile</div>
-    </div>
-  );
-};
+    return <div className="flex"></div>
+}
 
-export default Profile;
+export default Profile

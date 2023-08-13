@@ -28,14 +28,17 @@ const router = createBrowserRouter([
                 path: '/new',
                 element: <NewPosts />,
             },
+            /* Popular */
             {
                 path: '/popular',
                 element: <Popular />,
             },
+            /* Trendin */
             {
                 path: '/trending',
                 element: <Trending />,
             },
+            /* Contact */
             {
                 path: '/contact',
                 element: <Contact />,
