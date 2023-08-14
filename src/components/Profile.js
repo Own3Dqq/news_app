@@ -1,14 +1,15 @@
-import { useUser } from '../store/store'
+import { useDispatch } from 'react-redux'
+import { removeUser } from '../store/slices/userSlice'
 
-const Profile = () => {
-    const [removeUser] = useUser()
-
-    console.log(removeUser)
+const Profile = ({ email }) => {
+    const dispatch = useDispatch()
 
     return (
         <div className="flex">
             <div>Profile</div>
-            <button onClick={removeUser()}>Log Out</button>
+            <button onClick={dispatch(removeUser())}>
+                Log Out from {email}
+            </button>
         </div>
     )
 }

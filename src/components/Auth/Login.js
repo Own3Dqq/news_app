@@ -1,21 +1,27 @@
-import { useUser } from '../../store/store'
-import Form from './Form'
+import { useDispatch } from 'react-redux'
+
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import Form from './Form'
+import { setUser } from '../../store/slices/userSlice'
 
 const Login = () => {
-    const [user, setUser] = useUser((state) => [state.user, state.setUser])
+    const dispatch = useDispatch()
 
     const handleLogin = (email, password) => {
         const auth = getAuth()
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user
+            .then(({ user }) => {
                 console.log(user)
-                setUser(user)
+                dispatch(
+                    setUser({
+                        email: user.email,
+                        id: user.uid,
+                        token: user.accessTokin,
+                    })
+                )
             })
             .catch((error) => {
-                const errorCode = error.code
-                const errorMessage = error.message
+                alert('Invalid user')
             })
     }
 

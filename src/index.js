@@ -12,9 +12,17 @@ import '@fontsource/roboto/700.css'
 import router from './routes/root'
 import { RouterProvider } from 'react-router-dom'
 
+/* Redux Toolkit */
+import { store } from './store/store'
+import { Provider } from 'react-redux'
+
 /* Firebase */
 import './firebase'
 
 /*  */
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<RouterProvider router={router} />)
+root.render(
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
+)

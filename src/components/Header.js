@@ -1,18 +1,20 @@
-import { useState } from 'react'
 import Logo from './Logo'
 import Navbar from './Navbar'
 import Profile from './Profile'
 import Search from './Search'
 import Auth from './Auth'
 
-const Header = ({ auth }) => {
+import { useAuth } from '../hooks/useAuth'
+
+const Header = () => {
+    const { isAuth, email } = useAuth()
     return (
         <>
             <div className="flex justify-between">
                 <Logo />
                 <Search />
                 <div>
-                    {auth ? <Profile /> : <Auth />}
+                    {isAuth ? <Profile email={email} /> : <Auth />}
                     <Navbar />
                 </div>
             </div>
