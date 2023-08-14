@@ -16,12 +16,7 @@ const SelectedTopic = ({ activeTopic, setActiveTopic }) => {
                                 topic === activeTopic
                                     ? 'text-red-500'
                                     : 'text-black'
-                            } // style={{
-                            //     color:
-                            //         topic === activeTopic
-                            //             ? ''
-                            //             : '#000000',
-                            // }}
+                            }
                         >
                             <Link to={`?topic=${topic}`}>{topic}</Link>
                         </li>
