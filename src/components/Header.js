@@ -3,18 +3,16 @@ import Logo from './Logo'
 import Navbar from './Navbar'
 import Profile from './Profile'
 import Search from './Search'
-import Login from './Login'
+import Auth from './Auth'
 
-const Header = () => {
-    const [loggin] = useState(false)
-
+const Header = ({ auth }) => {
     return (
         <>
             <div className="flex justify-between">
                 <Logo />
                 <Search />
                 <div>
-                    {loggin ? <Profile /> : <Login />}
+                    {auth ? <Profile /> : <Auth />}
                     <Navbar />
                 </div>
             </div>

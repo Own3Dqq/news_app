@@ -9,6 +9,8 @@ import Popular from '../pages/Popular/Popular'
 import Trending from '../pages/Trending/Trending'
 import Contact from '../pages/Contact/Contact'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
+import LoginPage from '../pages/Auth/LoginPage'
+import RegistrationPage from '../pages/Auth/RegistrationPage'
 
 // Create React Router
 const router = createBrowserRouter([
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact />,
+            },
+            {
+                path: '/login',
+                element: <LoginPage />,
+            },
+            {
+                path: '/sign',
+                element: <RegistrationPage />,
             },
         ],
     },
