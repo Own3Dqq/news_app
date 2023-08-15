@@ -9,7 +9,7 @@ const ArticlesList = ({ activeTopic }) => {
     useEffect(() => {
         try {
             fetch(URL + 'activeTopic')
-                .then((responce) => responce.json())
+                .then((response) => response.json())
                 .then((data) => setArticles(data))
         } catch (error) {
             console.log(error)

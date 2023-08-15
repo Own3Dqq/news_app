@@ -1,17 +1,21 @@
 import { useDispatch } from 'react-redux'
-
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import Form from './Form'
 import { setUser } from '../../store/slices/userSlice'
+import Form from './Form'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const handleLogin = (email, password) => {
+    const handleLogin = (event, email, password) => {
+        event.preventDefault()
+
         const auth = getAuth()
         signInWithEmailAndPassword(auth, email, password)
-            .then(({ user }) => {
-                console.log(user)
+            .then((userCredential) => {
+                const user = userCredential.user
+
                 dispatch(
                     setUser({
                         email: user.email,
@@ -19,16 +23,17 @@ const Login = () => {
                         token: user.accessTokin,
                     })
                 )
+                navigate('/')
             })
             .catch((error) => {
-                alert('Invalid user')
+                console.log(error)
             })
     }
 
     return (
         <>
             <h1>Login</h1>
-            <Form title="sign in" handleClick={handleLogin} />
+            <Form title={'Sign In'} handleClick={handleLogin} />
         </>
     )
 }

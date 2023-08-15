@@ -125,7 +125,6 @@ import Discuss from '../../components/Discuss'
 // ]
 
 const Home = () => {
-    // const [error, setError] = useState(null)
     const [activeTopic, setActiveTopic] = useState('For you')
 
     return (

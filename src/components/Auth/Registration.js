@@ -2,15 +2,17 @@ import { useDispatch } from 'react-redux'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import Form from './Form'
 import { setUser } from '../../store/slices/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Registration = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const handleRegister = (email, password) => {
+    const handleRegister = (event, email, password) => {
+        event.preventDefault()
         const auth = getAuth()
         createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                console.log(user)
                 dispatch(
                     setUser({
                         email: user.email,
@@ -18,17 +20,17 @@ const Registration = () => {
                         token: user.accessTokin,
                     })
                 )
+                navigate('/')
             })
             .catch((error) => {
-                const errorCode = error.code
-                const errorMessage = error.message
+                console.log(error)
             })
     }
 
     return (
         <>
             <h1>Registration</h1>
-            <Form title="Register" handleClick={handleRegister} />
+            <Form title={'Register'} handleClick={handleRegister} />
         </>
     )
 }

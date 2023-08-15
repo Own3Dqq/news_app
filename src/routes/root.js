@@ -11,6 +11,8 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import LoginPage from '../pages/Auth/LoginPage'
 import RegistrationPage from '../pages/Auth/RegistrationPage'
 import ArticlePage from '../pages/Article/ArticlePage'
+import fetchArticle from '../data/fetchArticle'
+import DiscussPage from '../pages/Discuss/DiscussPage'
 
 // Create React Router
 const router = createBrowserRouter([
@@ -29,6 +31,7 @@ const router = createBrowserRouter([
             {
                 path: '/article/:id',
                 element: <ArticlePage />,
+                loader: fetchArticle,
             },
             //About
             {
@@ -57,6 +60,10 @@ const router = createBrowserRouter([
             {
                 path: '/sign',
                 element: <RegistrationPage />,
+            },
+            {
+                path: 'discuss/:id',
+                element: <DiscussPage></DiscussPage>,
             },
         ],
     },

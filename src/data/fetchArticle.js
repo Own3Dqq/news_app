@@ -1,12 +1,15 @@
-// const fetchArticle = ({ params }) => {
-//     return fetch(`https://jsonplaceholder.typicode.com/posts/${params}`)
-//         .then((response) => response.json)
-//         .then((data) => {
-//             return data
-//         })
-//         .catch((error) => {
-//             console.log(error)
-//         })
-// }
+import { defer } from 'react-router-dom'
 
-// export default fetchArticle
+async function getArticle(id) {
+    const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${id}`
+    )
+    return await response.json()
+}
+
+const fetchArticle = async ({ params }) => {
+    const { id } = params
+    return defer({ article: getArticle(id) })
+}
+
+export default fetchArticle

@@ -13,7 +13,7 @@ const Navbar = () => {
                 <NavLink className="hover:text-red-500" to={'/popular'}>
                     Popular
                 </NavLink>
-                <NavLink className="hover:text-red-500" k to={'/trending'}>
+                <NavLink className="hover:text-red-500" to={'/trending'}>
                     Trending
                 </NavLink>
                 <NavLink className="hover:text-red-500" to={'/contact'}>

@@ -6,7 +6,7 @@ const Form = ({ title, handleClick }) => {
 
     return (
         <>
-            <form className="flex w-[300px] gap-5 flex-col p-4 border-2">
+            <form className="flex flex-col w-[400px]  gap-5  p-4 border-2">
                 <div className="flex flex-col">
                     <label>Email</label>
                     <input
@@ -28,11 +28,17 @@ const Form = ({ title, handleClick }) => {
                 </div>
 
                 <button
+                    type="submit"
                     className="bg-red-500 rounded-sm"
-                    onClick={() => handleClick(email, password)}
+                    onClick={(e) => handleClick(e, email, password)}
                 >
                     {title}
                 </button>
+
+                <div className="flex justify-around">
+                    <button>Google</button>
+                    <button>GitHub</button>
+                </div>
             </form>
         </>
     )

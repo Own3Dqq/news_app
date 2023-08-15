@@ -6,13 +6,13 @@ const Discuss = () => {
             <h3 className="text-md font-semibold mb-4">#discuss</h3>
             <ul className="flex flex-col gap-y-4">
                 <li>
-                    <Link to={`/discuss/id}`}>
+                    <Link to={`/discuss/:id}`}>
                         Latest Newsletter - Browser Runs All the Things (Issue
                         #127)
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/discuss/id}`}>
+                    <Link to={`/discuss/:id}`}>
                         What parts of JavaScript are tricky for beginners?
                     </Link>
                 </li>
