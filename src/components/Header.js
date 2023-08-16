@@ -1,6 +1,5 @@
 import Logo from './Logo'
 import Navbar from './Navbar'
-import Profile from './Profile'
 import Search from './Search'
 import Auth from './Auth'
 import { useDispatch } from 'react-redux'
