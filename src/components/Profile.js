@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux'
-import { removeUser } from '../store/slices/userSlice'
 
-const Profile = ({ email }) => {
+const Profile = ({ email, removeUser }) => {
     const dispatch = useDispatch()
 
     return (

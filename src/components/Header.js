@@ -17,12 +17,13 @@ const Header = () => {
 
                 <div>
                     {isAuth ? (
-                        <div>
+                        <div className="flex justify-end">
+                            {email}{' '}
                             <button
                                 className="text-red"
                                 onClick={() => dispatch(removeUser())}
                             >
-                                Log out from {email}
+                                Log Out
                             </button>
                         </div>
                     ) : (
